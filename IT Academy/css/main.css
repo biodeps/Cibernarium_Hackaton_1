@@ -1,9 +1,11 @@
-		/* ---------------------------------- IT ACADEMY HACKTON ---------------------------------------*/
+		/* ---------------------------------- IT ACADEMY HACKATON ---------------------------------------*/
 
 		/* ---------------------------------- COMMON STYLES --------------------------------------------*/
 
 body {
 	font-family: 'verdana';
+	font-size: 1em;
+	margin: auto;
 }
 
 a {
@@ -17,4 +19,11 @@ ul {
 h1,h2,li {
 	margin-bottom: 10px;
 	margin-top: 10px;
+}
+
+#admin input[type="button"] {
+	font-size: 0px;
+	width: 20px;
+	height: 20px;
+	color: rgb( 0, 0, 0, 0);
 }
