@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IT Academy Gestió</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/main.js"></script>
+</head>
+        <!------------------------ IT ACADEMY GESTIÓ -------------------------->
+<body>
+
+    <header id="header">
+        <div>
+            <h1>IT ACADEMY GESTIÓ</h1>
+            <img src="" alt="IT Academy Gestió">
+        </div>
+    </header>
+
+    <div id="wrapper"></div>
+
+        <!---------------------------- lOGIN --------------------------> 
+
+        <form id="login" method="POST" action="">
+            <img src="" alt="Login">
+            <h2>LOGIN</h2>
+            <ul>
+                <li id="input1">
+                    <label for="user_name">Usuari</label>
+                    <br>
+                    <input type="text" name="user" id="userlog" placeholder="Usuari" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" required title="Camp obligatori">
+                </li>
+                <li id="input2">
+                    <label for="password">Clau d'accés</label>
+                    <br>
+                    <input type="password" name="password" id="password" pattern="\d{2}/\d{2}/\d{4}" placeholder="Contrasenya" required title="Camp obligatori">
+                </li>
+                <li>
+                    <input id="submit" type="submit" value="Entrar">
+                </li>
+            </ul>
+        </form>
+
+        <!------------------------------ ADMIN ---------------------------->
+
+        <form id="admin" class="admin_form" method="POST" action="">
+            <h2>PANEL D'ADMINISTRACIÓ</h2>
+            <ul>
+                <li id="button1" class="search">
+                    <label for="cercar_docents">Cercar docent</label>
+                    <input name="search" type="search" id="search_user" class="button2">
+                </li>
+                <li id="button2" class="search">
+                    <label for="docents_dispo">Cercar docents per disponibilitat</label>
+                    <select name="search_available" id="search_available" class="button3">
+                            <option value="1">Matí</option>
+                            <option value="2">Tarda</option>
+                            <option value="3">Tot el día</option>
+                        </select>
+                </li>
+                <li id="button3" class="form_button">
+                    <label for="docents">Llistat de docents</label>
+                    <input class="button1" type="button">
+                </li>
+                <li id="button4" class="form_button">
+                    <label for="alta_users">Alta d'usuaris</label>
+                    <input class="button4" type="button">
+                </li>
+                <li id="button5" class="form_button">
+                    <label for="edit_users">Modificar usuari</label>
+                    <input class="button5" type="button">
+                </li>
+                <li id="button6" class="form_button">
+                    <label for="delete_users">Eliminar usuari</label>
+                    <input class="button6" type="button">
+                </li>
+            </ul>
+        </form>
+
+        <!------------------------------ FORMULARI DOCENTS -------------------------->
+
+        <form id="teachers_form" method="POST" action="">
+            <h2>PANEL DE DOCENTS</h2>
+            <ul>
+                <li id="button1" class="form_button">
+                    <label for="date">Selecciona una data d'inici</label>
+                    <input type="date" name="date" id="start_date">
+                </li>
+                <li id="button1" class="form_button">
+                    <label for="date">Selecciona una data final</label>
+                    <input type="date" name="date" id="end_date">
+                </li>
+                <li id="button2" class="form_button">
+                    <label for="select">Selecciona franja horaria</label>
+                    <select name="time_zone" id="time_zone">
+                        <option value="1">Matí</option>
+						<option value="2">Tarda</option>
+                        <option value="3">Tot el día</option>
+                        <option value="4">Sense disponibilitat</option>
+                    </select>
+                </li>
+                <li>
+                    <input id="submit_2" type="submit" value="Enviar">
+                </li>
+            </ul>
+        </form> 
+
+    </div>
+    
+</body>
+</html>
+
+<!---------------------------------------------- VALIDACIÓN JS PARA FORMATO MÓVIL (ES) -------------------------------------------------------->
+
+function validate(value){
+
+    var str = value.toString().replace(/\s/g, '');    
+    return str.length === 9 && /^[679]{1}[0-9]{8}$/.test(str);
+}
+
+validate('639 125 230'); //true
+validate('668515187');   //true
+validate('133 560 158'); //false
+validate('932 510 258'); //true
+
